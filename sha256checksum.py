@@ -6,8 +6,6 @@ from tkinter import filedialog
 import subprocess
 import os
 
-# Stack overflow said you should do this to prevent 
-
 file = filedialog.askopenfile()
 if file:
     filepath = os.path.abspath(file.name)
