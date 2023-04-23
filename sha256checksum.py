@@ -29,8 +29,6 @@ requestedsha = input("Now paste the hash as indicated on the official website (p
 newrequestedsha = "SHA256 hash of " + filepath + ":\r\n" + requestedsha + "\r\n" + "CertUtil: -hashfile command completed successfully.\r\n" # Too lazy to format the 3 lines returned from stdout, so just mimicking the other 2 lines here o7
 
 if pipeReturn == newrequestedsha:
-    print("\n\n************ 8======D ************\n\nMatches! Always wrap your willy :-)\n\n************ C======D ************\n")
-    input("Enter to exit..")
+    input("\n\n************ 8======D ************\n\nMatches! Always wrap your willy :-)\n\n************ C======D ************\n\nEnter to exit..")
 else:
-    print("\n\n********************\n\nDelete this shit, you almost just got space herpies...\n\n********************\n")
-    input("Enter to exit..")
+    input("\n\n********************\n\nDelete this shit, you almost just got space herpies...\n\n********************\n\nEnter to exit..")
