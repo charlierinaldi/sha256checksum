@@ -5,10 +5,17 @@
 from tkinter import filedialog
 import subprocess
 import os
+import time
+
+print("Prove SHA256 checksum. Please provide downloaded file.")
+
+time.sleep(1)
 
 file = filedialog.askopenfile()
 if file:
     filepath = os.path.abspath(file.name)
+
+print("\nProcessing...\n")
 
 s = subprocess.run(['certutil', '-hashfile', f'{filepath}',  'SHA256'], stdout=subprocess.PIPE)
 pipeReturn = s.stdout.decode('utf-8')
@@ -23,5 +30,7 @@ newrequestedsha = "SHA256 hash of " + filepath + ":\r\n" + requestedsha + "\r\n"
 
 if pipeReturn == newrequestedsha:
     print("\n\n************ 8======D ************\n\nMatches! Always wrap your willy :-)\n\n************ C======D ************\n")
+    input("Enter to exit..")
 else:
     print("\n\n********************\n\nDelete this shit, you almost just got space herpies...\n\n********************\n")
+    input("Enter to exit..")
